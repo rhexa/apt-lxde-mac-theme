@@ -31,35 +31,40 @@ rm McMuse.tar.xz
 # Cursor
 # McMojave-cursors.tar.xz https://store.kde.org/p/1355701/
 wget --content-disposition https://github.com/rhexa/apt-lxde-mac-theme/raw/main/icons/cursors/McMojave-cursors.tar.xz
+tar -xvf McMojave-cursors.tar.xz
+rm McMojave-cursors.tar.xz
 
 # Compton
 sudo apt install -y compton
 
 # Wallpaper
-mkdir ~/.wallpapers
+mkdir -p ~/.wallpapers
+cd ~/.wallpapers
 curl -L https://wallpapercave.com/download/wallpapers-mac-wp3268411 -OJ
 curl https://wallpapersbook.com/wp-content/uploads/2020/10/mac-wallpaper-download-7.jpg -OJ 
 
 
 #############################################################################################################
+mkdir -p ~/tmp
+cd ~/tmp
 # Restore openbox config file
-wget -o lxde-rc.xml https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/openbox/lxde-rc.xml
+wget -O lxde-rc.xml https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/openbox/lxde-rc.xml
 mkdir -p ~/.config/openbox/
 mv lxde-rc.xml ~/.config/openbox/
 
 # Restore plank config
-wget -o plank.config https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/plank/plank.config
+wget -O plank.config https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/plank/plank.config
 cat plank.config | dconf load /net/launchpad/plank/docks/
 # backup plank
 # dconf dump /net/launchpad/plank/docks/ > plank.config
 
 # Restore lxpanel config
-wget -o panel https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/panel
+wget -O panel https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/panel
 mkdir -p ~/.config/lxpanel/LXDE/panels/
 mv panel ~/.config/lxpanel/LXDE/panels/
 
 # Restore lxsession config
-wget -o desktop.conf https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/desktop.conf
+wget -O desktop.conf https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/desktop.conf
 mkdir -p ~/.config/lxsession/LXDE/
 mv desktop.conf ~/.config/lxsession/LXDE/
 
