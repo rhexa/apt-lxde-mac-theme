@@ -68,6 +68,10 @@ wget -O desktop.conf https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/
 mkdir -p ~/.config/lxsession/LXDE/
 mv desktop.conf ~/.config/lxsession/LXDE/
 
+# Restore pcmanfm/wallpaper config
+wget -O desktop-items-0.conf https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/wallpapers/desktop-items-0.conf
+mv desktop-items-0.conf ./.config/pcmanfm/LXDE/
+
 # Added plank and compton to autostart
 mkdir -p ~/.config/lxsession/LXDE/
 echo '@plank' >> ~/.config/lxsession/LXDE/autostart
