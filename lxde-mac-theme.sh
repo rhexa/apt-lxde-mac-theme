@@ -55,3 +55,11 @@ cat plank.config | dconf load /net/launchpad/plank/docks/
 # Restore lxpanel config
 wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/panel
 mv panel ~/.config/lxpanel/LXDE/panels/
+
+# Restore lxsession config
+wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/desktop.conf
+mv desktop.conf ~/.config/lxsession/LXDE/
+
+# Added plank and compton to autostart
+echo '@plank' >> ~/.config/lxsession/LXDE/autostart
+echo '@compton' >> ~/.config/lxsession/LXDE/autostart
