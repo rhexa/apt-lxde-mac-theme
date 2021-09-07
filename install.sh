@@ -44,6 +44,7 @@ curl https://wallpapersbook.com/wp-content/uploads/2020/10/mac-wallpaper-downloa
 #############################################################################################################
 # Restore openbox config file
 wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/openbox/lxde-rc.xml
+mkdir -p ~/.config/openbox/
 mv lxde-rc.xml ~/.config/openbox/
 
 # Restore plank config
@@ -54,12 +55,15 @@ cat plank.config | dconf load /net/launchpad/plank/docks/
 
 # Restore lxpanel config
 wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/panel
+mkdir -p ~/.config/lxpanel/LXDE/panels/
 mv panel ~/.config/lxpanel/LXDE/panels/
 
 # Restore lxsession config
 wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/desktop.conf
+mkdir -p ~/.config/lxsession/LXDE/
 mv desktop.conf ~/.config/lxsession/LXDE/
 
 # Added plank and compton to autostart
+mkdir -p ~/.config/lxsession/LXDE/
 echo '@plank' >> ~/.config/lxsession/LXDE/autostart
 echo '@compton' >> ~/.config/lxsession/LXDE/autostart
