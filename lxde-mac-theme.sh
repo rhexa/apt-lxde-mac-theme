@@ -10,7 +10,7 @@ cd ~/.themes
 wget --content-disposition https://github.com/rhexa/apt-lxde-mac-theme/raw/main/themes/SBColors_XOS.obt
 tar -xvf SBColors_XOS.obt
 rm SBColors_XOS.obt
-sed -ri 's#(<titleLayout>).*(</titleLayout>)#\1CIMLN\2#g' .config/openbox/lxde-rc.xml
+# sed -ri 's#(<titleLayout>).*(</titleLayout>)#\1CIMLN\2#g' .config/openbox/lxde-rc.xml
 
 # Plank
 sudo apt install plank -y
@@ -39,3 +39,9 @@ sudo apt install -y compton
 mkdir ~/.wallpapers
 curl -L https://wallpapercave.com/download/wallpapers-mac-wp3268411 -OJ
 curl https://wallpapersbook.com/wp-content/uploads/2020/10/mac-wallpaper-download-7.jpg -OJ 
+
+
+#############################################################################################################
+# Restore openbox config file
+wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/openbox/lxde-rc.xml
+mv lxde-rc.xml ~/.config/openbox/
