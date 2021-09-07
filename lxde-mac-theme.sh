@@ -45,3 +45,10 @@ curl https://wallpapersbook.com/wp-content/uploads/2020/10/mac-wallpaper-downloa
 # Restore openbox config file
 wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/openbox/lxde-rc.xml
 mv lxde-rc.xml ~/.config/openbox/
+
+# Restore plank config
+wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/plank/plank.config
+cat plank.config | dconf load /net/launchpad/plank/docks/
+# backup plank
+# dconf dump /net/launchpad/plank/docks/ > plank.config
+
