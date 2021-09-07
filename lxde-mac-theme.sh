@@ -52,3 +52,6 @@ cat plank.config | dconf load /net/launchpad/plank/docks/
 # backup plank
 # dconf dump /net/launchpad/plank/docks/ > plank.config
 
+# Restore lxpanel config
+wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/panel
+mv panel ~/.config/lxpanel/LXDE/panels/
