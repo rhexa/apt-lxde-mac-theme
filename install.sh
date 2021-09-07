@@ -43,23 +43,23 @@ curl https://wallpapersbook.com/wp-content/uploads/2020/10/mac-wallpaper-downloa
 
 #############################################################################################################
 # Restore openbox config file
-wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/openbox/lxde-rc.xml
+wget -o lxde-rc.xml https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/openbox/lxde-rc.xml
 mkdir -p ~/.config/openbox/
 mv lxde-rc.xml ~/.config/openbox/
 
 # Restore plank config
-wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/plank/plank.config
+wget -o plank.config https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/plank/plank.config
 cat plank.config | dconf load /net/launchpad/plank/docks/
 # backup plank
 # dconf dump /net/launchpad/plank/docks/ > plank.config
 
 # Restore lxpanel config
-wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/panel
+wget -o panel https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/panel
 mkdir -p ~/.config/lxpanel/LXDE/panels/
 mv panel ~/.config/lxpanel/LXDE/panels/
 
 # Restore lxsession config
-wget --content-disposition https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/desktop.conf
+wget -o desktop.conf https://raw.githubusercontent.com/rhexa/apt-lxde-mac-theme/main/themes/desktop.conf
 mkdir -p ~/.config/lxsession/LXDE/
 mv desktop.conf ~/.config/lxsession/LXDE/
 
